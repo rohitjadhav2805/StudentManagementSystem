@@ -1,0 +1,20 @@
+## Ignore Visual Studio & .NET artifacts
+.vs/
+bin/
+obj/
+out/
+logs/
+*.user
+*.userosscache
+*.sln.docstates
+
+## Ignore Node / React UI
+node_modules/
+src/StudentManagement.UI/node_modules/
+src/StudentManagement.UI/dist/
+src/StudentManagement.UI/build/
+.npm
+
+## OS Generated
+.DS_Store
+Thumbs.db

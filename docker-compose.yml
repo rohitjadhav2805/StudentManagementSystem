@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: studentmanagement_sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourPassword123!
+    ports:
+      - "1433:1433"
+    networks:
+      - studentmanagement_net
+    volumes:
+      - mssql_data:/var/opt/mssql
+
+  api:
+    image: studentmanagement_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: studentmanagement_api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=StudentManagementDb;User Id=sa;Password=YourPassword123!;TrustServerCertificate=True;MultipleActiveResultSets=true
+      - JwtSettings__Secret=ZestIndiaSecretKeyForJWTAuthenticationProductionReady2026!
+      - JwtSettings__Issuer=StudentManagementAPI
+      - JwtSettings__Audience=StudentManagementClient
+      - JwtSettings__ExpiryMinutes=60
+    ports:
+      - "5000:8080"
+      - "5001:8081"
+    depends_on:
+      - sqlserver
+    networks:
+      - studentmanagement_net
+
+networks:
+  studentmanagement_net:
+    driver: bridge
+
+volumes:
+  mssql_data:
