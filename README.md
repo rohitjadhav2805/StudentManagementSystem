@@ -1,6 +1,6 @@
 # Student Management System - Enterprise Full Stack Solution (.NET 8 & React)
 
-Production-ready Student Management System developed for **Zest India IT Pvt Ltd** technical assignment.
+Production-ready Student Management System developed for **Zest  IT Pvt Ltd** technical assignment.
 
 Built using **ASP.NET Core 8 Web API**, **C#**, **SQL Server**, **Entity Framework Core 8**, **JWT Authentication**, **Serilog**, **FluentValidation**, **Swagger UI**, **xUnit Unit Tests**, and a modern **React UI (Bootstrap 5)**.
 
