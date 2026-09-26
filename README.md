@@ -1,4 +1,4 @@
-# Student Management System - Enterprise Full Stack Solution (.NET 8 & React)
+# Student Management System - Enterprise Full Stack Solution (.NET 9 & React)
 
 Production-ready Student Management System developed for **Zest India IT Pvt Ltd** technical assignment.
 
